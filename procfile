@@ -47,5 +47,6 @@ urllib3==1.26.11
 wcwidth==0.2.5
 Werkzeug==2.1.2
 zipp==3.8.0
-web: gunicorn app:app
+web: gunicorn app:app --preload
 web: gunicorn run:app
+heroku ps:scale web=1
