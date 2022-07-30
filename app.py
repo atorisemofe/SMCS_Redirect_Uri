@@ -5,7 +5,7 @@ import random
 import string
 import hashlib
 import base64
-from typing import Any, Tuple
+from typing import Any, Tuple, Dict
 import webbrowser
 import requests
 from oauthlib.oauth2 import WebApplicationClient
@@ -55,7 +55,7 @@ def oauth():
         #print(code_verifier + '\n')
         return (code_verifier, code_challenge)
 
-    def login(config: dict[str, Any]) -> str:
+    def login(config: Dict[str, Any]) -> str:
         with OAuthHttpServer(('', config["port"]), OAuthHttpHandler) as httpd:
             client = WebApplicationClient(config["client_id"])
             
