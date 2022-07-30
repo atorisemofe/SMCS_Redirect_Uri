@@ -5,7 +5,7 @@ import random
 import string
 import hashlib
 import base64
-from typing import Any
+from typing import Any, Tuple
 import webbrowser
 import requests
 from oauthlib.oauth2 import WebApplicationClient
@@ -43,7 +43,7 @@ def oauth():
             self.server.authorization_code = qs["code"][0]
 
 
-    def generate_code() -> tuple[str, str]:
+    def generate_code() -> Tuple[str, str]:
         rand = random.SystemRandom()
         code_verifier = ''.join(rand.choices(string.ascii_letters + string.digits, k=128))
 
