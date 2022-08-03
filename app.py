@@ -90,8 +90,8 @@ def oauth():
 
     config = {
         "port": 8080,
-        "client_id": "98cfa101-3bad-43c0-86e3-12d83c1a0cc8",
-        "redirect_uri": f"http://localhost:8080",
+        "client_id": "cc8fba50-e23b-4835-b59b-38ae4c134de4",
+        "redirect_uri": f"https://smcs-app.herokuapp.com/",
         "auth_uri": "https://account.starmicronicscloud.com/retailer/signin/oauth2/v2.0/authorize",
         "token_uri": "https://account.starmicronicscloud.com/retailer/signin/oauth2/v2.0/token",
         "scopes": [ "https://starmicronicscloud.com/printer-manager/configurations", 
