@@ -4,7 +4,7 @@ import random
 import string
 import hashlib
 import base64
-from typing import Any
+from typing import Any, Tuple, Dict
 import webbrowser
 import requests
 from oauthlib.oauth2 import WebApplicationClient
@@ -34,7 +34,7 @@ class OAuthHttpHandler(BaseHTTPRequestHandler):
         self.server.authorization_code = qs["code"][0]
 
 
-def generate_code() -> tuple[str, str]:
+def generate_code() -> Tuple[str, str]:
     rand = random.SystemRandom()
     code_verifier = ''.join(rand.choices(string.ascii_letters + string.digits, k=128))
 
@@ -46,7 +46,7 @@ def generate_code() -> tuple[str, str]:
     #print(code_verifier + '\n')
     return (code_verifier, code_challenge)
 
-def login(config: dict[str, Any]) -> str:
+def login(config: Dict[str, Any]) -> str:
     with OAuthHttpServer(('', config["port"]), OAuthHttpHandler) as httpd:
         client = WebApplicationClient(config["client_id"])
         
