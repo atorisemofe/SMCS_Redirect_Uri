@@ -23,12 +23,12 @@ def index():
 def about():
     return render_template ('about.html')
 
-@app.route('/devices')
-def devices():
-    list = requests.get("https://device-manager.smcs.io/printer/api/v1/devices")
-    data = list.json()
-    print(data)
-    return data
+# @app.route('/devices')
+# def devices():
+#     list = requests.get("https://device-manager.smcs.io/printer/api/v1/devices")
+#     data = list.json()
+#     print(data)
+#     return data
 
 
 if __name__ == '__main__':    
