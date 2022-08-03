@@ -26,7 +26,7 @@ def about():
 
 @app.route('/devices')
 def devices():
-    #SMCSOauth
+    SMCSOauth
     headers = { "Authorization": "Bearer " + SMCSOauth.access_token }
     list = requests.get("https://device-manager.smcs.io/printer/api/v1/devices", headers=headers)
     data = list.json()
