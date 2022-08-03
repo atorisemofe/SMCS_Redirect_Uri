@@ -11,7 +11,7 @@ import webbrowser
 import requests
 from oauthlib.oauth2 import WebApplicationClient
 from IPython.display import clear_output
-import SMCSOauth
+#import SMCSOauth
 
 app = Flask(__name__)
 
@@ -26,7 +26,7 @@ def about():
 
 @app.route('/devices')
 def devices():
-    SMCSOauth
+    import SMCSOauth
     headers = { "Authorization": "Bearer " + SMCSOauth.access_token }
     list = requests.get("https://device-manager.smcs.io/printer/api/v1/devices", headers=headers)
     data = list.json()
