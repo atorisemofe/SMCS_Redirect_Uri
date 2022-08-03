@@ -10,7 +10,7 @@ import webbrowser
 import requests
 from oauthlib.oauth2 import WebApplicationClient
 from IPython.display import clear_output
-import SMCSOauth
+#import SMCSOauth
 
 app = Flask(__name__)
 
